@@ -1,12 +1,13 @@
 package ru.netology.javaqa.javaqamvn.services;
 
-import java.util.Arrays;
-
 public class SalesService {
 
     public int sumSales(int[] sales) {
 
-        int sum = Arrays.stream(sales).sum() ;
+        int sum = 0 ;
+        for (int sale : sales){
+            sum += sale;
+        }
         return sum;
     }
 
@@ -38,13 +39,24 @@ public class SalesService {
 
     public int averageSales(int[] sales) {
 
-        int average = Arrays.stream(sales).sum() / sales.length;
+        int sum = 0 ;
+        for (int sale : sales){
+            sum += sale;
+        }
+
+        int average = sum/ sales.length;
 
         return average;
     }
 
     public int lowAverageSumSales(int[] sales) {
-        int averageSumSales = Arrays.stream(sales).sum() / sales.length;
+
+        int sum = 0 ;
+        for (int sale : sales){
+            sum += sale;
+        }
+
+        int averageSumSales = sum/ sales.length;
         int monthAmount = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSumSales) {
@@ -55,7 +67,12 @@ public class SalesService {
     }
 
     public int upAverageSumSales(int[] sales) {
-        int averageSumSales = Arrays.stream(sales).sum() / sales.length;
+        int sum = 0 ;
+        for (int sale : sales){
+            sum += sale;
+        }
+
+        int averageSumSales = sum / sales.length;
         int monthSales = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > averageSumSales) {
